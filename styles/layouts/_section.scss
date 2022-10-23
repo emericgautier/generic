@@ -1,0 +1,64 @@
+.odd {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    align-items: center;
+    padding: 50px 0;
+
+
+    img {
+        width: 50%;
+        display: block;
+        margin: 0 auto;
+    }
+
+    .content {
+        text-align: left;
+        position: relative;
+        color: #083A54;
+
+        &:before {
+            content: "";
+            position: absolute;
+            background: #F3F6F8;
+            width: 50%;
+            height: 100%;
+            -webkit-clip-path: polygon(0 20%, 100% 0, 100% 100%, 0 80%);
+            clip-path: polygon(0 20%, 100% 0, 100% 100%, 0 80%);
+            z-index: -1;
+            padding: 100px;
+            left: 30%;
+            top: 50%;
+            transform: translate(-50%, -50%);
+        }
+
+        h3 {
+            font-size: 2.2rem;
+            margin: 5px 0 10px;
+        }
+
+        p:nth-of-type(1) {
+            font-weight: 100;
+            letter-spacing: 1px;
+        }
+
+        p:nth-of-type(2) {
+            font-family: 'Fasthand', cursive;
+            font-size: 1.8rem;
+            color: #F4BB59;
+        }
+    }
+}
+
+
+.even {
+
+    .content {
+        text-align: right;
+
+        &:before {
+            -webkit-clip-path: polygon(0 0, 100% 20%, 100% 80%, 0% 100%);
+            clip-path: polygon(0 0, 100% 20%, 100% 80%, 0% 100%);
+            left: 70%;
+        }
+}
+}
